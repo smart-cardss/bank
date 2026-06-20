@@ -3,114 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Топ Выгодных Карт с Кэшбэком</title>
+    <title>ФинГайд: Сравнение финансовых и банковских услуг 2026</title>
+    <meta name="description" content="Честный агрегатор финансовых продуктов. Бесплатные дебетовые и кредитные карты с кэшбэком, выгодные вклады, займы без отказа, ипотека от Альфа-Банка, РКО и списание долгов.">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f0f2f5; color: #1a1a1a; margin: 0; padding: 20px; line-height: 1.5; }
-        .container { max-width: 550px; margin: 0 auto; background: #ffffff; padding: 30px 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.04); }
-        .header { text-align: center; margin-bottom: 30px; }
-        h1 { font-size: 26px; margin: 0 0 10px 0; color: #000; font-weight: 800; }
-        .subtitle { color: #666; font-size: 14px; margin: 0; }
-        .card-list { display: flex; flex-direction: column; gap: 20px; }
-        .card-item { border: 1px solid #eef0f3; border-radius: 16px; padding: 20px; background: #fafbfc; position: relative; transition: transform 0.2s, border-color: 0.2s; }
-        .card-item:hover { transform: translateY(-2px); border-color: #4361ee; background: #fff; }
-        .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
-        .bank-name { font-size: 18px; font-weight: 700; color: #000; }
-        .badge { background: #e8ecff; color: #4361ee; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 20px; }
-        .card-benefit { font-size: 14px; font-weight: 600; color: #2ec4b6; margin-bottom: 12px; }
-        .card-features { font-size: 13px; color: #4a4a4a; margin: 0 0 20px 0; padding-left: 18px; text-align: left; }
-        .card-features li { margin-bottom: 6px; }
-        .btn { display: block; text-align: center; background: #4361ee; color: #fff; text-decoration: none; padding: 14px; border-radius: 12px; font-weight: 700; font-size: 15px; transition: background 0.2s; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.15); }
-        .btn:hover { background: #304ece; }
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --card-bg: #ffffff;
+            --accent: #16a34a;
+            --gray-text: #64748b;
+            --alfa-red: #ef4444;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
         
-        /* СТИЛИ ДЛЯ SEO-БЛОКА */
-        .seo-section { text-align: left; margin-top: 40px; padding-top: 25px; border-top: 1px dashed #ced4da; }
-        .seo-section h2 { font-size: 18px; margin-bottom: 12px; color: #111; font-weight: 700; }
-        .seo-section h3 { font-size: 15px; margin-top: 18px; margin-bottom: 6px; color: #222; font-weight: 600; }
-        .seo-section p { font-size: 13px; color: #555; line-height: 1.6; margin: 0 0 12px 0; }
+        header { background: var(--card-bg); border-bottom: 1px solid #e2e8f0; padding: 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 15px; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
         
-        .footer { text-align: center; font-size: 11px; color: #999; margin-top: 35px; border-top: 1px solid #eee; padding-top: 15px; }
+        .tabs { display: flex; gap: 10px; overflow-x: auto; width: 100%; padding-bottom: 5px; justify-content: flex-start; }
+        .tabs::-webkit-scrollbar { height: 4px; }
+        .tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .tab-btn { background: #f1f5f9; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-color); cursor: pointer; white-space: nowrap; transition: all 0.2s; }
+        .tab-btn:hover { background: #e2e8f0; }
+        .tab-btn.active { background: var(--primary); color: white; }
+        .tab-btn.alfa-tab.active { background: var(--alfa-red); }
+
+        main { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+        
+        .section-content { display: none; }
+        .section-content.active { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .section-header { margin-bottom: 25px; }
+        .section-header h1 { font-size: 1.8rem; color: #0f172a; margin-bottom: 8px; }
+        .section-header p { color: var(--gray-text); font-size: 1.05rem; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .card { background: var(--card-bg); border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); }
+        .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #0f172a; }
+        
+        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+        .tag { font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: #eff6ff; color: var(--primary); }
+        .tag.accent { background: #f0fdf4; color: var(--accent); }
+        .tag.alfa { background: #fef2f2; color: var(--alfa-red); }
+
+        .props { list-style: none; margin-bottom: 20px; border-top: 1px dashed #e2e8f0; padding-top: 15px; }
+        .props li { font-size: 0.95rem; margin-bottom: 8px; color: #334155; display: flex; justify-content: space-between; }
+        .props li span { font-weight: 600; color: #0f172a; text-align: right; }
+
+        .btn { display: block; text-align: center; background: var(--primary); color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; transition: background 0.2s; }
+        .btn:hover { background: var(--primary-hover); }
+        .btn.alfa-btn { background: var(--alfa-red); }
+        .btn.alfa-btn:hover { background: #dc2626; }
+
+        .seo-text { background: var(--card-bg); border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .seo-text h2 { font-size: 1.4rem; margin-bottom: 15px; color: #0f172a; margin-top: 20px; }
+        .seo-text h2:first-child { margin-top: 0; }
+        .seo-text h3 { font-size: 1.15rem; margin-bottom: 10px; color: #1e293b; margin-top: 15px; }
+        .seo-text p { margin-bottom: 15px; color: #334155; font-size: 0.95rem; text-align: justify; }
+        .seo-text ul { margin-left: 20px; margin-bottom: 15px; color: #334155; font-size: 0.95rem; }
+        .seo-text ul li { margin-bottom: 5px; }
+
+        footer { text-align: center; padding: 40px 20px; color: var(--gray-text); font-size: 0.85rem; border-top: 1px solid #e2e8f0; background: var(--card-bg); margin-top: 60px; }
+
+        @media(min-width: 768px) {
+            .nav-container { flex-direction: row; justify-content: space-between; }
+            .tabs { width: auto; }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>💳 Выберите лучшую карту</h1>
-        <p class="subtitle">Официальное оформление напрямую в банках с бесплатной доставкой на дом за 1-2 дня.</p>
-    </div>
-
-    <!-- СПИСОК ОФФЕРОВ ДЛЯ МОНЕТИЗАЦИИ -->
-    <div class="card-list">
-
-        <!-- КАРТА 1: Альфа-Банк -->
-        <div class="card-item">
-            <div class="card-top">
-                <div class="bank-name">Альфа-Карта</div>
-                <span class="badge">Хит продаж</span>
-            </div>
-            <div class="card-benefit">🎁 Обслуживание: Бесплатно навсегда</div>
-            <ul class="card-features">
-                <li>Супер-кэшбэк до 100% на случайную категорию каждый месяц</li>
-                <li>Повышенный кэшбэк 5% в 4 топовых категориях на выбор</li>
-                <li>Без комиссии за переводы и оплату ЖКХ</li>
-            </ul>
-            <!-- Вставьте вашу ссылку с Пампаду вместо ССЫЛКА_АЛЬФА -->
-            <a href="ССЫЛКА_АЛЬФА" target="_blank" class="btn">Оформить на сайте банка</a>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">ФинГайд</a>
+            <nav class="tabs">
+                <button class="tab-btn active" onclick="openSection(event, 'cards')">Дебетовые карты</button>
+                <button class="tab-btn" onclick="openSection(event, 'credit-cards')">Кредитные карты</button>
+                <button class="tab-btn" onclick="openSection(event, 'deposits')">Вклады и счета</button>
+                <button class="tab-btn" onclick="openSection(event, 'loans')">Микрозаймы</button>
+                <button class="tab-btn" onclick="openSection(event, 'credits')">Кредит наличными</button>
+                <button class="tab-btn alfa-tab" onclick="openSection(event, 'alfa-mortgage')">Ипотека Альфа-Банк</button>
+                <button class="tab-btn" onclick="openSection(event, 'rko')">РКО и Бизнес</button>
+                <button class="tab-btn" onclick="openSection(event, 'bankruptcy')">Банкротство</button>
+            </nav>
         </div>
+    </header>
 
-        <!-- КАРТА 2: Т-Банк -->
-        <div class="card-item">
-            <div class="card-top">
-                <div class="bank-name">Т-Банк (Тинькофф) Black</div>
-                <span class="badge">Выбор пользователей</span>
-            </div>
-            <div class="card-benefit">🎁 Кэшбэк до 30% у партнеров</div>
-            <ul class="card-features">
-                <li>Четыре категории кэшбэка рублями каждый месяц</li>
-                <li>Удобное мобильное приложение и круглосуточная поддержка</li>
-                <li>Снятие наличных без комиссии в любых банкоматах</li>
-            </ul>
-            <!-- Вставьте вашу ссылку с Пампаду вместо ССЫЛКА_ТБАНК -->
-            <a href="ССЫЛКА_ТБАНК" target="_blank" class="btn">Оформить на сайте банка</a>
-        </div>
-
-        <!-- КАРТА 3: ВТБ -->
-        <div class="card-item">
-            <div class="card-top">
-                <div class="bank-name">ВТБ «Для жизни»</div>
-                <span class="badge">Высокий кэшбэк</span>
-            </div>
-            <div class="card-benefit">🎁 До 25% в топ-категориях</div>
-            <ul class="card-features">
-                <li>Кэшбэк на самое нужное: супермаркеты, аптеки, транспорт</li>
-                <li>Абсолютно бесплатное обслуживание без условий</li>
-                <li>Скидки и спецпредложения в мультибонусной программе</li>
-            </ul>
-            <!-- Вставьте вашу ссылку с Пампаду вместо ССЫЛКА_ВТБ -->
-            <a href="ССЫЛКА_ВТБ" target="_blank" class="btn">Оформить на сайте банка</a>
-        </div>
-
-    </div>
-
-    <!-- SEO БЛОК ДЛЯ СРЕДНЕ- И НИЗКОЧАСТОТНЫХ ЗАПРОСОВ -->
-    <div class="seo-section">
-        <h2>Как выбрать дебетовую карту с максимальной выгодой в 2026 году?</h2>
-        <p>Чтобы понять, <strong>какую дебетовую карту лучше оформить для кэшбэка</strong>, заранее проанализируйте свои ежемесячные траты. Большинство банков предлагают гибкую настройку категорий повышенного возврата средств.</p>
+    <main>
         
-        <h3>Какая карта выгоднее для покупок в супермаркетах?</h3>
-        <p>Если ваши основные расходы приходятся на продукты, обратите внимание на <strong>дебетовую карту ВТБ Для жизни</strong>. Она стабильно предлагает повышенный процент возврата на супермаркеты. В то же время, <strong>Альфа-Карта</strong> позволяет крутить барабан супер-кэшбэка, где может выпасть до 100% на продукты или другие популярные категории.</p>
-
-        <h3>Где лучше условия на бесплатное обслуживание без ограничений?</h3>
-        <p>Ищете <strong>дебетовые карты с бесплатным обслуживанием навсегда</strong> без скрытых условий и требований по минимальному обороту? В нашей подборке все три варианта (Альфа-Банк, Т-Банк Black и ВТБ) не требуют платы за ведение счета. Вы можете заказать их одновременно, использовать только для целевых категорий с максимальными скидками и не платить банку ни рубля.</p>
-
-        <h3>Как быстро оформляется бесплатная доставка карты на дом?</h3>
-        <p>При оформлении онлайн-заявки по официальным ссылкам, курьерская <strong>доставка дебетовой карты на дом</strong> занимает от 1 до 2 дней в зависимости от вашего города. Карту привезут в запечатанном конверте, а для активации достаточно совершить любую мелкую покупку в магазине.</p>
-    </div>
-
-    <div class="footer">
-        Вся информация носит ознакомительный характер. Оформление происходит на защищенных официальных сайтах лицензированных банков РФ.
-    </div>
-</div>
-
-</body>
-</html>
+        <!-- РАЗДЕЛ 1: ДЕБЕТОВЫЕ КАРТЫ -->
+        <section id="cards" class="section-content active">
+            <div class="section-header">
+                <h1>Дебетовые карты банков России 2026: сравнение и заказ</h1>
+                <p>Честный каталог выгодных карт: с кэшбэком, для самозанятых, иностранных граждан, детей, молодежи и оплаты за рубежом.</p>
+            </div>
+            <div style="background: #f1f5f9; padding: 15px; border-radius: 8px; margin-bottom: 25px; font-size: 0.9rem; line-height: 1.5;">
+                <strong>🎯 Подбор карты под ваши цели:</strong> Для покупок на маркетплейсах оформляйте <em>Ozon Банк</em>. Если планируете поездку за границу или оплату зарубежных подписок — выбирайте <em>UnionPay</em> или сервис <em>Плати по миру</em>. Для официального ведения дел фрилансерам идеально подойдет карта для <em>Самозанятых от Альфы</em>.
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div><div class="tags"><span class="tag">Акция: 1000 за 1000</span><span class="tag accent">Кэшбэк 100%</span></div><h2 class="card-title">ОТП Карта (Акция)</h2><ul class="props"><li>Приветственный бонус: <span>1 000 ₽ за трату от 1 000 ₽</span></li><li>Обслуживание: <span>0 ₽ без условий</span></li><li>Кэшбэк: <span>До 5% на рестораны и ЖКХ</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Оформить по акции</a>
+                </div>
+                <div class="card">
+                    <div><div class="tags"><span class="tag">Детям до 14 лет</span><span class="tag accent">Платежный стикер</span></div><h2 class="card-title">Детский стикер «Халвау»</h2><ul class="props"><li>Формат: <span>Наклейка бесконтактной оплаты</span></li><li>Обслуживание: <span>0 ₽ всегда</span></li><li>Кэшбэк для детей: <span>До 6% за покупки</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Заказать стикер Халвау</a>
+                </div>
+                <div class="card">
+                    <div><div class="tags"><span class="tag">БСПБ</span><span class="tag accent">Карта Яркая</span></div><h2 class="card-title">Дебетовая карта Яркая</h2><ul class="props"><li>Бонусы: <span>До 5% за яркие категории</span></li><li>Обслуживание: <span>0 ₽ при условиях</span></li><li>Переводы по СБП: <span>Бесплатно</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Оформить карту Яркая</a>
+                </div>
+                <div class="card">
+                    <div><div class="tags"><span class="tag">Альфа-Банк</span><span class="tag accent">Альфа‑Смарт</span></div><h2 class="card-title">Альфа‑Карта с привилегиями</h2><ul class="props"><li>Обслуживание: <span>0 ₽ (с опциями Смарт)</span></li><li>Кэшбэк: <span>Повышенный на топ-категории</span></li><li>Доп. бонусы: <span>Увеличенный лимит переводов</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Оформить Альфа-Карту</a>
+                </div>
+                <div class="card">
