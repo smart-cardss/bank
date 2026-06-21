@@ -3,299 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ФинГайд: Сравнение финансовых и банковских услуг 2026</title>
-    <meta name="description" content="Честный агрегатор финансовых продуктов. Бесплатные дебетовые и кредитные карты с кэшбэком, выгодные вклады, займы без отказа, ипотека от Альфа-Банка, РКО и списание долгов.">
+    <title>Единый Финансовый Центр — Сравнение и оформление банковских услуг онлайн</title>
+    <meta name="description" content="Актуальные предложения от ведущих банков и МФО России. Оформляйте дебетовые и кредитные карты, вклады, займы, кредиты наличными, ипотеку, тарифы РКО и помощь в банкротстве онлайн.">
     <style>
         :root {
-            --bg-color: #f8fafc;
-            --text-color: #1e293b;
             --primary: #2563eb;
             --primary-hover: #1d4ed8;
-            --card-bg: #ffffff;
-            --accent: #16a34a;
-            --gray-text: #64748b;
-            --alfa-red: #ef4444;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #ef4444;
+            --success: #10b981;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.5; padding-bottom: 40px; }
         
-        header { background: var(--card-bg); border-bottom: 1px solid #e2e8f0; padding: 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 15px; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+        header { background: white; padding: 25px 0; text-align: center; border-bottom: 1px solid #e2e8f0; }
+        header h1 { font-size: 24px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+        header p { color: var(--gray); font-size: 14px; }
+
+        nav { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; padding: 8px 15px; gap: 8px; }
+        .nav-btn { background: #f1f5f9; border: none; padding: 10px 16px; font-size: 13px; font-weight: 600; color: var(--gray); cursor: pointer; border-radius: 6px; transition: all 0.2s; flex-shrink: 0; }
+        .nav-btn:hover { color: var(--dark); background: #e2e8f0; }
+        .nav-btn.active { color: white; background: var(--primary); }
+
+        .container { max-width: 900px; margin: 20px auto; padding: 0 15px; min-height: 450px; }
         
-        .tabs { display: flex; gap: 10px; overflow-x: auto; width: 100%; padding-bottom: 5px; justify-content: flex-start; }
-        .tabs::-webkit-scrollbar { height: 4px; }
-        .tabs::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-        .tab-btn { background: #f1f5f9; border: none; padding: 10px 18px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; color: var(--text-color); cursor: pointer; white-space: nowrap; transition: all 0.2s; }
-        .tab-btn:hover { background: #e2e8f0; }
-        .tab-btn.active { background: var(--primary); color: white; }
-        .tab-btn.alfa-tab.active { background: var(--alfa-red); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        main { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-        .section-content { display: none; }
-        .section-content.active { display: block; animation: fadeIn 0.3s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .seo-block { background: white; padding: 18px; border-radius: 12px; margin-bottom: 18px; border: 1px solid #e2e8f0; }
+        .seo-block h2 { font-size: 18px; margin-bottom: 6px; color: var(--dark); }
+        .seo-block p { font-size: 13.5px; color: var(--gray); }
 
-        .section-header { margin-bottom: 25px; }
-        .section-header h1 { font-size: 1.8rem; color: #0f172a; margin-bottom: 8px; }
-        .section-header p { color: var(--gray-text); font-size: 1.05rem; }
+        .grid-container { display: grid; grid-template-columns: 1fr; gap: 12px; }
+        @media(min-width: 768px) { .grid-container { grid-template-columns: 1fr 1fr; } }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-bottom: 40px; }
-        .card { background: var(--card-bg); border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); transition: transform 0.2s; }
-        .card:hover { transform: translateY(-3px); }
-        .card-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 15px; color: #0f172a; }
+        .card { background: white; border-radius: 12px; padding: 18px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; position: relative; min-height: 180px; }
+        .badge { position: absolute; top: 0; left: 0; background: var(--accent); color: white; font-size: 9px; padding: 2px 8px; border-bottom-right-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .card-info { margin-bottom: 12px; }
+        .card-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 4px; padding-top: 5px; line-height: 1.3; }
+        .card-tags { display: flex; gap: 4px; margin-bottom: 10px; flex-wrap: wrap; }
+        .tag { background: #eff6ff; color: #1e40af; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        .tag.promo { background: #ecfdf5; color: #065f46; }
         
-        .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
-        .tag { font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 6px; background: #eff6ff; color: var(--primary); }
-        .tag.accent { background: #f0fdf4; color: var(--accent); }
-        .tag.alfa { background: #fef2f2; color: var(--alfa-red); }
-
-        .props { list-style: none; margin-bottom: 20px; border-top: 1px dashed #e2e8f0; padding-top: 15px; }
-        .props li { font-size: 0.95rem; margin-bottom: 8px; color: #334155; display: flex; justify-content: space-between; }
-        .props li span { font-weight: 600; color: #0f172a; text-align: right; }
-
-        .btn { display: block; text-align: center; background: var(--primary); color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 0.95rem; transition: background 0.2s; }
+        .metrics { display: flex; gap: 15px; background: #f8fafc; padding: 8px; border-radius: 6px; margin-top: 5px; }
+        .metric-item { display: flex; flex-direction: column; }
+        .metric-label { font-size: 9px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.3px; }
+        .metric-value { font-size: 12px; font-weight: 700; color: var(--dark); }
+        
+        .btn { display: block; background: var(--primary); color: white; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 700; font-size: 13px; text-align: center; cursor: pointer; border: none; width: 100%; transition: background 0.15s; }
         .btn:hover { background: var(--primary-hover); }
-        .btn.alfa-btn { background: var(--alfa-red); }
-        .btn.alfa-btn:hover { background: #dc2626; }
 
-        footer { text-align: center; padding: 40px 20px; color: var(--gray-text); font-size: 0.85rem; border-top: 1px solid #e2e8f0; background: var(--card-bg); margin-top: 60px; }
-
-        @media(min-width: 768px) {
-            .nav-container { flex-direction: row; justify-content: space-between; }
-            .tabs { width: auto; }
-        }
+        footer { background: #0f172a; color: #94a3b8; padding: 30px 0; text-align: center; font-size: 11px; margin-top: 40px; }
+        footer p { max-width: 700px; margin: 0 auto 8px auto; padding: 0 15px; line-height: 1.4; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">ФинГайд</a>
-            <nav class="tabs">
-                <button class="tab-btn active" onclick="openSection(event, 'cards')">Дебетовые карты</button>
-                <button class="tab-btn" onclick="openSection(event, 'credit-cards')">Кредитные карты</button>
-                <button class="tab-btn" onclick="openSection(event, 'deposits')">Вклады и счета</button>
-                <button class="tab-btn" onclick="openSection(event, 'loans')">Микрозаймы</button>
-                <button class="tab-btn" onclick="openSection(event, 'credits')">Кредит наличными</button>
-                <button class="tab-btn alfa-tab" onclick="openSection(event, 'alfa-mortgage')">Ипотека Альфа-Банк</button>
-                <button class="tab-btn" onclick="openSection(event, 'rko')">РКО и Бизнес</button>
-                <button class="tab-btn" onclick="openSection(event, 'bankruptcy')">Банкротство</button>
-            </nav>
+<header>
+    <h1>Единый Центр Финансовых Решений</h1>
+    <p>Выбирайте, сравнивайте условия и оформляйте заявки напрямую в банках</p>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <button class="nav-btn active" onclick="switchTab('cards')">Банковские карты</button>
+        <button class="nav-btn" onclick="switchTab('vkladi')">Вклады и Инвестиции</button>
+        <button class="nav-btn" onclick="switchTab('mfo')">Микрозаймы</button>
+        <button class="nav-btn" onclick="switchTab('credits')">Кредиты наличными</button>
+        <button class="nav-btn" onclick="switchTab('alfa')">Ипотека Альфа-Банк</button>
+        <button class="nav-btn" onclick="switchTab('rko')">РКО и Бизнес</button>
+        <button class="nav-btn" onclick="switchTab('bankrot')">Банкротство</button>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- РАЗДЕЛ: БАНКОВСКИЕ КАРТЫ -->
+    <div id="cards" class="tab-content active">
+        <div class="seo-block">
+            <h2>Оформить дебетовую или кредитную карту онлайн</h2>
+            <p>Актуальные предложения от крупнейших банков. Выбирайте дебетовые карты МИР с высоким кэшбэком, премиальные карты или выгодные кредитные карты с длительным льготным периодом без процентов и бесплатным годовым обслуживанием.</p>
         </div>
-    </header>
-
-    <main>
-        
-        <!-- РАЗДЕЛ 1: ДЕБЕТОВЫЕ КАРТЫ -->
-        <section id="cards" class="section-content active">
-            <div class="section-header">
-                <h1>Дебетовые карты банков России 2026: сравнение и заказ</h1>
-                <p>Честный каталог выгодных карт: с кэшбэком, для самозанятых, иностранных граждан и детей.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <div><div class="tags"><span class="tag">Т-Банк</span><span class="tag accent">Топ кэшбэк</span></div><h2 class="card-title">Т-Банк — Black МИР</h2><ul class="props"><li>Кэшбэк: <span>До 30% у партнеров</span></li><li>Обслуживание: <span>0 ₽ (при условиях)</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Оформить карту</a>
-                </div>
-                <div class="card">
-                    <div><div class="tags"><span class="tag">ОТП Банк</span><span class="tag accent">Акция: 1000 за 1000</span></div><h2 class="card-title">ОТП Карта (Кешбэк 100%)</h2><ul class="props"><li>Акция: <span>1000 ₽ за трату от 1000 ₽</span></li><li>Обслуживание: <span>0 ₽ без условий</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Оформить по акции</a>
-                </div>
-                <div class="card">
-                    <div><div class="tags"><span class="tag alfa">Альфа-Банк</span><span class="tag accent">Альфа‑Смарт</span></div><h2 class="card-title">Альфа‑Карта Привилегии</h2><ul class="props"><li>Обслуживание: <span>0 ₽ со Смарт</span></li><li>Переводы: <span>Без лимитов и комиссий</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn alfa-btn">Оформить карту</a>
-                </div>
-                <div class="card">
-                    <div><div class="tags"><span class="tag">Уралсиб</span><span class="tag accent">Доход на остаток</span></div><h2 class="card-title">Карта «Прибыль»</h2><ul class="props"><li>Процент: <span>Высокий процент</span></li><li>Снятие: <span>В любых банкоматах 0 ₽</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Оформить карту</a>
-                </div>
-                <div class="card">
-                    <div><div class="tags"><span class="tag">Ozon Банк</span><span class="tag accent">Скидки до 30%</span></div><h2 class="card-title">Дебетовая карта Ozon</h2><ul class="props"><li>На Ozon: <span>Максимальные скидки</span></li><li>Вне Ozon: <span>Кэшбэк рублями</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Оформить карту</a>
-                </div>
-                <div class="card">
-                    <div><div class="tags"><span class="tag">За рубеж</span><span class="tag accent">Оплата подписок</span></div><h2 class="card-title">Сервис «Плати по миру»</h2><ul class="props"><li>Назначение: <span>Оплата зарубежных сайтов</span></li><li>Доступ: <span>Моментальный</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Открыть сервис</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- РАЗДЕЛ 2: КРЕДИТНЫЕ КАРТЫ -->
-        <section id="credit-cards" class="section-content">
-            <div class="section-header">
-                <h1>Кредитные карты с льготным периодом</h1>
-                <p>Кредитные карты от крупнейших банков с бесплатным снятием наличных и длинным беспроцентным периодом.</p>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <div><div class="tags"><span class="tag">ВТБ</span><span class="tag accent">Длинный грейс</span></div><h2 class="card-title">Кредитная карта ВТБ</h2><ul class="props"><li>Без %: <span>До 200 дней на всё</span></li><li>Лимит: <span>До 1 000 000 ₽</span></li></ul></div><a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Оформить карту</a>
-                </div>
-                <div class="card">
-        <!-- РАЗДЕЛ 4: МИКРОЗАЙМЫ -->
-        <section id="loans" class="section-content">
-            <div class="section-header">
-                <h1>Микрозаймы онлайн 2026: получить займ без отказа</h1>
-                <p>Проверенные МФО с лицензией ЦБ РФ. Быстрое одобрение за 5 минут, выдача на карту круглосуточно, в том числе с плохой кредитной историей.</p>
-            </div>
-            
-            <div style="background: #f0fdf4; padding: 15px; border-radius: 8px; margin-bottom: 25px; font-size: 0.9rem; border: 1px solid #bbf7d0;">
-                <strong>💡 Лайфхак для экономии:</strong> Большинство МФО из списка предлагают **первый займ под 0%** для новых клиентов. Вы можете оформить займы в нескольких компаниях по очереди и не переплачивать проценты!
-            </div>
-
-            <div class="grid">
-                <!-- Joymoney -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag accent">Первый под 0%</span><span class="tag">До 30 000 ₽</span></div>
-                        <h2 class="card-title">Joymoney</h2>
-                        <ul class="props">
-                            <li>Ставка: <span>От 0% в день</span></li>
-                            <li>Срок: <span>До 30 дней</span></li>
-                            <li>Одобрение: <span>95% заявок</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- BelkaCredit -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag accent">Без отказа</span><span class="tag">Быстрое решение</span></div>
-                        <h2 class="card-title">BelkaCredit</h2>
-                        <ul class="props">
-                            <li>Ставка: <span>От 0% новым</span></li>
-                            <li>Минимум документов: <span>Только паспорт</span></li>
-                            <li>Перевод: <span>На любую карту</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Max.Credit -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag">Моментально</span><span class="tag">На карту</span></div>
-                        <h2 class="card-title">Max.Credit</h2>
-                        <ul class="props">
-                            <li>Срок: <span>От 5 до 30 дней</span></li>
-                            <li>Возраст: <span>От 18 лет</span></li>
-                            <li>Проверка: <span>Без звонков оператора</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Cashmagnit -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag accent">Новинка</span><span class="tag">Высокий лимит</span></div>
-                        <h2 class="card-title">Cashmagnit</h2>
-                        <ul class="props">
-                            <li>Рассмотрение: <span>Автоматическое</span></li>
-                            <li>КИ: <span>Любая кредитная история</span></li>
-                            <li>Получение: <span>Онлайн 24/7</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Viva деньги -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag">Надежно</span><span class="tag">Крупная сумма</span></div>
-                        <h2 class="card-title">Viva деньги</h2>
-                        <ul class="props">
-                            <li>Лимит: <span>До 100 000 ₽</span></li>
-                            <li>Срок: <span>До 12 месяцев</span></li>
-                            <li>Оформление: <span>Онлайн или в офисе</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- MScore -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag accent">Умный подбор</span></div>
-                        <h2 class="card-title">MScore</h2>
-                        <ul class="props">
-                            <li>Скоринг: <span>Мгновенный</span></li>
-                            <li>Шанс одобрения: <span>Очень высокий</span></li>
-                            <li>Документы: <span>СНИЛС или Паспорт</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Альфа Деньги (нерезиденты) -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag accent">Для СНГ</span><span class="tag">Без гражданства РФ</span></div>
-                        <h2 class="card-title">Альфа Деньги (нерезиденты)</h2>
-                        <ul class="props">
-                            <li>Особенность: <span>Для иностранных граждан</span></li>
-                            <li>Документы: <span>Паспорт + патент/миграционная</span></li>
-                            <li>Выдача: <span>На карту РФ</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Альфа Деньги - Кредитный лимит -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag">Как кредитка</span><span class="tag">Многократно</span></div>
-                        <h2 class="card-title">Альфа Деньги — Кредитный лимит</h2>
-                        <ul class="props">
-                            <li>Формат: <span>Возобновляемый лимит</span></li>
-                            <li>Удобство: <span>Берете деньги когда нужно</span></li>
-                            <li>Проценты: <span>Только на остаток долга</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Быстроденьги -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag accent">0% для новых</span><span class="tag">Известный бренд</span></div>
-                        <h2 class="card-title">Быстроденьги</h2>
-                        <ul class="props">
-                            <li>Акция: <span>Займ без процентов</span></li>
-                            <li>Скорость: <span>Доставка на карту за 3 минуты</span></li>
-                            <li>Доп. опция: <span>Выдача наличными</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Мега Деньги -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag">Лояльные условия</span></div>
-                        <h2 class="card-title">Мега Деньги</h2>
-                        <ul class="props">
-                            <li>Одобрение: <span>С любым доходом</span></li>
-                            <li>Способ получения: <span>Карта, СБП</span></li>
-                            <li>Безопасность: <span>Защита данных</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Snapcredit -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag accent">Быстрый скоринг</span></div>
-                        <h2 class="card-title">Snapcredit</h2>
-                        <ul class="props">
-                            <li>Режим работы: <span>Автомат 24 часа</span></li>
-                            <li>Возраст: <span>С 18 до 75 лет</span></li>
-                            <li>Требования: <span>Минимальные</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://ppdu.ru" target="_blank" rel="nofollow noopener" class="btn">Получить деньги</a>
-                </div>
-
-                <!-- Credit Plus -->
-                <div class="card">
-                    <div>
-                        <div class="tags"><span class="tag accent">Кэшбэк за возврат</span></div>
-                        <h2 class="card-title">Credit Plus</h2>
-                        <ul class="props">
-                            <li>Бонус: <span>Возврат части процентов бонусами</span></li>
+        <div class="grid-container">
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Дебетовая карта Black МИР</div><div class="card-tags"><span class="tag promo">Популярно</span><span class="tag">Кэшбэк в категориях</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Обслуживание</span><span class="metric-value">от 0 ₽</span></div><div class="metric-item"><span class="metric-label">Кэшбэк</span><span class="metric-value">до 30%</span></div></div></div><button onclick="safeRedirect('card1')" class="btn">Оформить</button></div>
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Black МИР, Диодная карта</div><div class="card-tags"><span class="tag promo">Новинка</span><span class="tag">Эксклюзивный дизайн</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Светящаяся</span><span class="metric-value">Да</span></div><div class="metric-item"><span class="metric-label">Доставка</span><span class="metric-value">Бесплатно</span></div></div></div><button onclick="safeRedirect('card2')" class="btn">Оформить</button></div>
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Black / Молодежная карта</div><div class="card-tags"><span class="tag promo">До 22 лет</span><span class="tag">Особый кэшбэк</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Обслуживание</span><span class="metric-value">0 ₽ всегда</span></div><div class="metric-item"><span class="metric-label">Стикеры</span><span class="metric-value">Доступны</span></div></div></div><button onclick="safeRedirect('card3')" class="btn">Оформить</button></div>
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">ALL Airlines Debit / Промокоды</div><div class="card-tags"><span class="tag promo">Для путешествий</span><span class="tag">Мили за покупки</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Кэшбэк милями</span><span class="metric-value">до 8%</span></div><div class="metric-item"><span class="metric-label">Страховка</span><span class="metric-value">В подарок</span></div></div></div><button onclick="safeRedirect('card4')" class="btn">Оформить</button></div>
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Дебетовая карта S7 + Розыгрыш</div><div class="card-tags"><span class="tag promo">Летнее промо</span><span class="tag">Мили S7</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Акция</span><span class="metric-value">Розыгрыш призов</span></div><div class="metric-item"><span class="metric-label">Мили за туры</span><span class="metric-value">до 4%</span></div></div></div><button onclick="safeRedirect('card5')" class="btn">Оформить</button></div>
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Black МИР / Pro 3 месяца</div><div class="card-tags"><span class="tag promo">Спецвыгода</span><span class="tag">Подписка Pro</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Pro период</span><span class="metric-value">3 мес. бесплатно</span></div><div class="metric-item"><span class="metric-label">Доход на счет</span><span class="metric-value">Повышен</span></div></div></div><button onclick="safeRedirect('card6')" class="btn">Оформить</button></div>
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Дебетовая исламская карта</div><div class="card-tags"><span class="tag promo">Халяль стандарты</span><span class="tag">Честный расчет</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Соответствие</span><span class="metric-value">Шариат</span></div><div class="metric-item"><span class="metric-label">Карта МИР</span><span class="metric-value">Да</span></div></div></div><button onclick="safeRedirect('card7')" class="btn">Оформить</button></div>
