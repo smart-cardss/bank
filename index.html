@@ -2,17 +2,125 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Единый Финансовый Центр — Сравнение</title>
-    <!-- ... (остальной head с CSS стилями, как в оригинале) ... -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Единый Финансовый Центр — Сравнение и оформление банковских услуг онлайн</title>
+    <meta name="description" content="Актуальные предложения от ведущих банков и МФО России. Оформляйте дебетовые и кредитные карты, вклады, займы, кредиты наличными, ипотеку, тарифы РКО и помощь в банкротстве онлайн.">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #ef4444;
+            --success: #10b981;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.5; padding-bottom: 40px; }
+        
+        header { background: white; padding: 25px 0; text-align: center; border-bottom: 1px solid #e2e8f0; }
+        header h1 { font-size: 24px; font-weight: 800; color: var(--dark); margin-bottom: 6px; }
+        header p { color: var(--gray); font-size: 14px; }
+
+        nav { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; overflow-x: auto; white-space: nowrap; -webkit-overflow-scrolling: touch; }
+        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; padding: 8px 15px; gap: 8px; }
+        .nav-btn { background: #f1f5f9; border: none; padding: 10px 16px; font-size: 13px; font-weight: 600; color: var(--gray); cursor: pointer; border-radius: 6px; transition: all 0.2s; flex-shrink: 0; }
+        .nav-btn:hover { color: var(--dark); background: #e2e8f0; }
+        .nav-btn.active { color: white; background: var(--primary); }
+
+        .container { max-width: 900px; margin: 20px auto; padding: 0 15px; min-height: 450px; }
+        
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .seo-block { background: white; padding: 18px; border-radius: 12px; margin-bottom: 18px; border: 1px solid #e2e8f0; }
+        .seo-block h2 { font-size: 18px; margin-bottom: 6px; color: var(--dark); }
+        .seo-block p { font-size: 13.5px; color: var(--gray); }
+
+        .grid-container { display: grid; grid-template-columns: 1fr; gap: 12px; }
+        @media(min-width: 768px) { .grid-container { grid-template-columns: 1fr 1fr; } }
+
+        .card { background: white; border-radius: 12px; padding: 18px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; justify-content: space-between; position: relative; min-height: 180px; }
+        .badge { position: absolute; top: 0; left: 0; background: var(--accent); color: white; font-size: 9px; padding: 2px 8px; border-bottom-right-radius: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .card-info { margin-bottom: 12px; }
+        .card-title { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 4px; padding-top: 5px; line-height: 1.3; }
+        .card-tags { display: flex; gap: 4px; margin-bottom: 10px; flex-wrap: wrap; }
+        .tag { background: #eff6ff; color: #1e40af; font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+        .tag.promo { background: #ecfdf5; color: #065f46; }
+
+        .metrics { display: flex; gap: 15px; background: #f8fafc; padding: 8px; border-radius: 6px; margin-top: 5px; }
+        .metric-item { display: flex; flex-direction: column; }
+        .metric-label { font-size: 9px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.3px; }
+        .metric-value { font-size: 12px; font-weight: 700; color: var(--dark); }
+        
+        .btn { display: block; background: var(--primary); color: white; text-decoration: none; padding: 10px 16px; border-radius: 6px; font-weight: 700; font-size: 13px; text-align: center; cursor: pointer; border: none; width: 100%; transition: background 0.15s; }
+        .btn:hover { background: var(--primary-hover); }
+
+        footer { background: #0f172a; color: #94a3b8; padding: 30px 0; text-align: center; font-size: 11px; margin-top: 40px; }
+        footer p { max-width: 700px; margin: 0 auto 8px auto; padding: 0 15px; line-height: 1.4; }
+    </style>
 </head>
 <body>
-    <!-- ... (структура header и nav, как в оригинале) ... -->
-    <div class="container">
-        <!-- Секции tab-content (cards, vkladi, mfo, credits, и т.д.) с вашим контентом -->
+
+<header>
+    <h1>Единый Центр Финансовых Решений</h1>
+    <p>Выбирайте, сравнивайте условия и оформляйте заявки напрямую в банках</p>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <button class="nav-btn active" onclick="switchTab('cards')">Банковские карты</button>
+        <button class="nav-btn" onclick="switchTab('vkladi')">Вклады и Инвестиции</button>
+        <button class="nav-btn" onclick="switchTab('mfo')">Микрозаймы</button>
+        <button class="nav-btn" onclick="switchTab('credits')">Кредиты наличными</button>
+        <button class="nav-btn" onclick="switchTab('alfa')">Ипотека Альфа-Банк</button>
+        <button class="nav-btn" onclick="switchTab('rko')">РКО и Бизнес</button>
+        <button class="nav-btn" onclick="switchTab('bankrot')">Банкротство</button>
     </div>
-    <script>
-        function switchTab(tabId) { /* ... логика переключения ... */ }
-        function safeRedirect(offerId) { /* ... логика перенаправления ... */ }
-    </script>
-</body>
-</html>
+</nav>
+
+<div class="container">
+
+    <!-- РАЗДЕЛ: БАНКОВСКИЕ КАРТЫ -->
+    <div id="cards" class="tab-content active">
+        <div class="seo-block">
+            <h2>Оформить дебетовую или кредитную карту онлайн</h2>
+            <p>Актуальные предложения от крупнейших банков. Выбирайте дебетовые карты МИР с высоким кэшбэком, премиальные карты или выгодные кредитные карты с длительным льготным периодом.</p>
+        </div>
+        <div class="grid-container">
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Дебетовая карта Black МИР</div><div class="card-tags"><span class="tag promo">Популярно</span><span class="tag">Кэшбэк в категориях</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Обслуживание</span><span class="metric-value">от 0 ₽</span></div><div class="metric-item"><span class="metric-label">Кэшбэк</span><span class="metric-value">до 30%</span></div></div></div><button onclick="safeRedirect('card1')" class="btn">Оформить</button></div>
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Black МИР, Диодная карта</div><div class="card-tags"><span class="tag promo">Новинка</span><span class="tag">Эксклюзивный дизайн</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Светящаяся</span><span class="metric-value">Да</span></div><div class="metric-item"><span class="metric-label">Доставка</span><span class="metric-value">Бесплатно</span></div></div></div><button onclick="safeRedirect('card2')" class="btn">Оформить</button></div>
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Black / Молодежная карта</div><div class="card-tags"><span class="tag promo">До 22 лет</span><span class="tag">Особый кэшбэк</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Обслуживание</span><span class="metric-value">0 ₽ всегда</span></div><div class="metric-item"><span class="metric-label">Стикеры</span><span class="metric-value">Доступны</span></div></div></div><button onclick="safeRedirect('card3')" class="btn">Оформить</button></div>
+        </div>
+    </div>
+
+    <!-- РАЗДЕЛ: ВКЛАДЫ И ИНВЕСТИЦИИ -->
+    <div id="vkladi" class="tab-content">
+        <div class="seo-block">
+            <h2>Вклады и Инвестиции с высокой ставкой</h2>
+            <p>Выгодные предложения по накопительным счетам и вкладам от ведущих банков России.</p>
+        </div>
+        <div class="grid-container">
+            <div class="card"><div class="badge">Т-Банк</div><div class="card-info"><div class="card-title">Накопительный счет (с Pro)</div><div class="card-tags"><span class="tag promo">Высокий доход</span><span class="tag">Каждый месяц</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Ставка</span><span class="metric-value">до 15% годовых</span></div><div class="metric-item"><span class="metric-label">Снятие</span><span class="metric-value">Без потерь</span></div></div></div><button onclick="safeRedirect('vklad1')" class="btn">Открыть счет</button></div>
+        </div>
+    </div>
+
+    <!-- РАЗДЕЛ: МИКРОЗАЙМЫ -->
+    <div id="mfo" class="tab-content">
+        <div class="seo-block">
+            <h2>Микрозаймы онлайн без проверок</h2>
+            <p>Срочные займы на банковскую карту за 5 минут. Одобрение до 99% заявок.</p>
+        </div>
+        <div class="grid-container">
+            <div class="card"><div class="badge">МФО</div><div class="card-info"><div class="card-title">Займ под 0% на первый срок</div><div class="card-tags"><span class="tag promo">Без процентов</span><span class="tag">Мгновенно</span></div><div class="metrics"><div class="metric-item"><span class="metric-label">Сумма</span><span class="metric-value">до 30 000 ₽</span></div><div class="metric-item"><span class="metric-label">Ставка</span><span class="metric-value">0%</span></div></div></div><button onclick="safeRedirect('mfo1')" class="btn">Получить деньги</button></div>
+        </div>
+    </div>
+
+    <!-- РАЗДЕЛ: КРЕДИТЫ НАЛИЧНЫМИ -->
+    <div id="credits" class="tab-content">
+        <div class="seo-block">
+            <h2>Потребительские кредиты наличными</h2>
+            <p>Оформление кредита без визита в банк с доставкой наличных на дом.</p>
+        </div>
+        <div class="grid-container">
