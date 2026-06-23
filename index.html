@@ -3,86 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Финансовый портал | Сравнение банковских продуктов</title>
-    <meta name="description" content="Сравнение банковских карт, вкладов, кредитов и других финансовых продуктов от ведущих банков России">
-    <meta name="keywords" content="банковские карты, вклады, кредиты, ипотека, РКО, микрозаймы">
-    <link rel="stylesheet" href="styles.css">
+    <title>Выгодные карты банков 2026: оформить онлайн с кэшбэком и без обслуживания</title>
+    <meta name="description" content="Сравнение и онлайн-заявка на лучшие дебетовые и кредитные карты банков России. Выберите карту с максимальным кэшбэком, бесплатным обслуживанием и доставкой на дом.">
     
-    <!-- SEO микроразметка -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Website",
-      "name": "Финансовый портал",
-      "url": "https://your-domain.ru",
-      "description": "Портал сравнения финансовых продуктов"
-    }
-    </script>
+    <!-- Стили витрины -->
+    <style>
+        :root {
+            --primary: #0052cc;
+            --secondary: #00cc66;
+            --bg: #f4f6f9;
+            --text: #333;
+            --text-muted: #666;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        
+        /* Шапка сайта */
+        header { background: #fff; padding: 30px 15px; text-align: center; border-bottom: 1px solid #e1e4e8; }
+        header h1 { font-size: 26px; color: #111; margin-bottom: 10px; }
+        header p { font-size: 16px; color: var(--text-muted); }
+        
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 15px; }
+        
+        /* Навигация / Табы для СЧ-оптимизации */
+        .tabs-nav { display: flex; gap: 10px; margin-bottom: 25px; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+        .tabs-nav h2 { font-size: 18px; padding: 8px 16px; background: #fff; border-radius: 6px; cursor: pointer; border: 1px solid #ddd; }
+        .tabs-nav h2.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+        
+        /* SEO Описание сверху */
+        .seo-intro { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .seo-intro h2 { font-size: 20px; margin-bottom: 12px; color: #111; }
+        
+        /* Сетка карточек */
+        .card-list { display: flex; flex-direction: column; gap: 20px; margin-bottom: 40px; }
+        .card { background: #fff; border-radius: 8px; padding: 25px; display: grid; grid-template-columns: 180px 1fr 180px; gap: 20px; align-items: center; box-shadow: 0 3px 10px rgba(0,0,0,0.04); position: relative; }
+        
+        /* Лейблы преимуществ */
+        .badge { position: absolute; top: 12px; left: 12px; background: #ffedea; color: #ff4d4d; font-size: 12px; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+        
+        .card-logo { text-align: center; font-size: 22px; font-weight: 900; letter-spacing: -0.5px; }
+        .alfa-color { color: #ef3124; }
+        .tbank-color { color: #ffdd00; text-shadow: 1px 1px 0px #000; }
+        .vtb-color { color: #00aaec; }
+        .sber-color { color: #21a038; }
+        
+        .card-content h3 { font-size: 19px; margin-bottom: 15px; color: #111; }
+        
+        /* Параметры карт */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; }
+        .feat-item { font-size: 13px; color: var(--text-muted); }
+        .feat-item span { display: block; font-size: 15px; color: #111; font-weight: 600; margin-top: 2px; }
+        
+        /* Кнопка действия */
+        .card-action { text-align: center; }
+        .btn { display: block; width: 100%; background: var(--secondary); color: #fff; padding: 14px; text-decoration: none; border-radius: 6px; font-weight: bold; text-align: center; transition: background 0.2s; font-size: 15px; }
+        .btn:hover { background: #00b353; }
+        
+        /* SEO Блок с НЧ-запросами внизу */
+        .seo-footer { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .seo-footer h2 { font-size: 22px; margin-top: 25px; margin-bottom: 12px; color: #111; }
+        .seo-footer h2:first-child { margin-top: 0; }
+        .seo-footer p { margin-bottom: 15px; color: #444; }
+        .seo-footer ul { margin-left: 20px; margin-bottom: 15px; color: #444; }
+        .seo-footer li { margin-bottom: 6px; }
+
+        /* Адаптивность для телефонов */
+        @media (max-width: 768px) {
+            .card { grid-template-columns: 1fr; text-align: center; padding-top: 40px; }
+            .features { grid-template-columns: 1fr 1fr; text-align: left; }
+            .tabs-nav { flex-wrap: wrap; }
+            .tabs-nav h2 { width: 100%; text-align: center; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Шапка сайта -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#cards">Банковские карты</a></li>
-                <li><a href="#deposits">Вклады</a></li>
-                <li><a href="#credits">Кредиты</a></li>
-                <li><a href="#micro">Микрозаймы</a></li>
-                <li><a href="#rko">РКО</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Раздел банковских карт -->
-    <section id="cards">
-        <h1>Банковские карты</h1>
-        <div class="card-list">
-            <!-- Пример карточки -->
-            <div class="card-item">
-                <h2>Т-Банк Black МИР</h2>
-                <a href="https://trk.ppdu.ru/click/Wrhc8bFr?erid=Kra23xCCG">Получить карту</a>
-                <p>Дебетовая карта с кешбэком и выгодными условиями</p>
+<header>
+    <h1>Сравнить условия по банковским картам (Актуально на 2026 год)</h1>
+    <p>Честный рейтинг финансовых предложений с мгновенным одобрением онлайн</p>
+</header>
+
+<div class="container">
+
+    <!-- SEO Блок 1: СЧ Запрос "выбрать дебетовую карту с бесплатным обслуживанием и кэшбэком" -->
+    <section class="seo-intro">
+        <h2>Как выбрать дебетовую карту с бесплатным обслуживанием и кэшбэком?</h2>
+        <p>Наш независимый агрегатор помогает бесплатно сравнить актуальные параметры банковских продуктов. При подборе дебетового пластика важно обращать внимание не только на яркую рекламу, но и на скрытые условия: требования к ежемесячному обороту для начисления повышенных бонусов, лимиты на переводы через СБП и комиссии за СМС-информирование. Ниже собраны проверенные варианты с быстрой онлайн-заявкой.</p>
+    </section>
+
+    <!-- Переключатели категорий для распределения веса ключевых слов -->
+    <div class="tabs-nav">
+        <h2 class="active">Лучшие дебетовые карты</h2>
+    </div>
+
+    <!-- Список финансовых офферов из Пампаду -->
+    <div class="card-list">
+        
+        <!-- Карточка 1: Альфа-Банк -->
+        <article class="card">
+            <div class="badge">Выбор пользователей</div>
+            <div class="card-logo alfa-color">Альфа-Банк</div>
+            <div class="card-content">
+                <h3>Альфа-Карта (Дебетовая)</h3>
+                <div class="features">
+                    <div class="feat-item">Стоимость обслуживания: <span>0 ₽ навсегда</span></div>
+                    <div class="feat-item">Кэшбэк на категории: <span>до 5% (4 категории)</span></div>
+                    <div class="feat-item">Снятие без комиссии: <span>До 50 000 ₽ везде</span></div>
+                    <div class="feat-item">Процент на остаток: <span>до 12% годовых</span></div>
+                </div>
             </div>
-            <!-- Остальные карты добавляются аналогично -->
-        </div>
-    </section>
-
-    <!-- Раздел вкладов -->
-    <section id="deposits">
-        <h1>Вклады и инвестиции</h1>
-        <div class="deposit-list">
-            <!-- Пример вклада -->
-            <div class="deposit-item">
-                <h2>Вклад Яндекс Банк</h2>
-                <a href="https://trk.ppdu.ru/click/W1EL4cLs?erid=2SDnjdu4CUi">Открыть вклад</a>
-                <p>Выгодные условия размещения средств</p>
+            <div class="card-action">
+                <a href="ССЫЛКА_ИЗ_ПАМПАДУ_НА_БАНК_АЛЬФА" class="btn" target="_blank" rel="nofollow noopener">Оформить карту</a>
             </div>
-        </div>
-    </section>
+        </article>
 
-    <!-- Раздел кредитов -->
-    <section id="credits">
-        <h1>Кредитные продукты</h1>
-        <!-- Аналогичная структура как у предыдущих разделов -->
-    </section>
+        <!-- Карточка 2: Т-Банк -->
+        <article class="card">
+            <div class="badge">Быстрая доставка</div>
+            <div class="card-logo tbank-color">Т-Банк</div>
+            <div class="card-content">
+                <h3>Дебетовая карта Т-Black</h3>
+                <div class="features">
+                    <div class="feat-item">Обслуживание: <span>0 ₽ (при условиях)</span></div>
+                    <div class="feat-item">Макс. кэшбэк: <span>до 15% за категории</span></div>
+                    <div class="feat-item">Переводы без процентов: <span>До 5 млн ₽ в мес.</span></div>
+                    <div class="feat-item">Доставка представителем: <span>0 ₽ (1–2 дня)</span></div>
+                </div>
+            </div>
+            <div class="card-action">
+                <a href="ССЫЛКА_ИЗ_ПАМПАДУ_НА_БАНК_ТБАНК" class="btn" target="_blank" rel="nofollow noopener">Оформить карту</a>
+            </div>
+        </article>
 
-    <!-- Раздел микрозаймов -->
-    <section id="micro">
-        <h1>Микрозаймы</h1>
-        <!-- Список МФО с ссылками -->
-    </section>
+        <!-- Карточка 3: ВТБ -->
+        <article class="card">
+            <div class="badge">Надежный выбор</div>
+            <div class="card-logo vtb-color">ВТБ</div>
+            <div class="card-content">
+                <h3>Карта для жизни ВТБ</h3>
+                <div class="features">
+                    <div class="feat-item">Выпуск и обслуживание: <span>0 ₽ без условий</span></div>
+                    <div class="feat-item">Кэшбэк рублями: <span>2% в топ-категориях</span></div>
+                    <div class="feat-item">Скидки у партнеров: <span>до 30% мультибонус</span></div>
+                    <div class="feat-item">Транспортное приложение: <span>Доступно бесплатно</span></div>
+                </div>
+            </div>
+            <div class="card-action">
+                <a href="ССЫЛКА_ИЗ_ПАМПАДУ_НА_БАНК_ВТБ" class="btn" target="_blank" rel="nofollow noopener">Оформить карту</a>
+            </div>
+        </article>
 
-    <!-- Раздел РКО -->
-    <section id="rko">
-        <h1>РКО для бизнеса</h1>
-        <!-- Информация о расчетно-кассовом обслуживании -->
-    </section>
+        <!-- Карточка 4: СберБанк -->
+        <article class="card">
+            <div class="badge">Самый популярный</div>
+            <div class="card-logo sber-color">СберБанк</div>
+            <div class="card-content">
+                <h3>СберКарта Дебетовая</h3>
+                <div class="features">
+                    <div class="feat-item">Стоимость: <span>0 ₽ (при тратах от 5к)</span></div>
+                    <div class="feat-item">Бонусы Спасибо: <span>до 10% на АЗС</span></div>
+                    <div class="feat-item">Снятие в банкоматах: <span>0 ₽ в сети Сбера</span></div>
+                    <div class="feat-item">Уведомления об операциях: <span>99 ₽/мес или бесплатно</span></div>
+                </div>
+            </div>
+            <div class="card-action">
+                <a href="ССЫЛКА_ИЗ_ПАМПАДУ_НА_БАНК_СБЕР" class="btn" target="_blank" rel="nofollow noopener">Оформить карту</a>
+            </div>
+        </article>
 
-    <footer>
-        <p>© 2026 Финансовый портал</p>
-    </footer>
+    </div>
 
-    <!-- Подключение скриптов -->
-    <script src="scripts.js"></script>
-</body>
-</html>
+    <!-- SEO Блок 2: Оптимизация под НЧ-запросы и "хвосты" поисковых фраз -->
+    <footer class="seo-footer">
+        <h2>Где выгоднее открыть дебетовую карту для покупок в супермаркетах?</h2>
+        <p>Если вы регулярно закупаетесь в крупных продуктовых сетях, ключевым фактором экономии становится правильный подбор бонусных категорий. Рассматривая предложения банков, отдавайте приоритет тем тарифам, где категория «Супермаркеты» или «Продукты» гарантированно дает от 1% до 5% кэшбэка реальными деньгами или баллами, которые легко конвертировать в рубли по курсу один к одному.</p>
+
