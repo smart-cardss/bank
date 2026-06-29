@@ -72,6 +72,8 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
         h1 { font-size: 2rem; margin-top: 0; color: #111827; }
+        h2 { font-size: 1.5rem; color: #111827; }
+        p { color: #4b5563; font-size: 1.05rem; }
         
         /* Список офферов */
         .offers-list {
@@ -96,15 +98,26 @@
             .offer-action { text-align: center; }
         }
         
-        /* Стили плашек банков */
+        /* Текстовая цветная плашка банка вместо картинок */
         .bank-badge {
-            width: 70px; height: 70px;
+            width: 70px;
+            height: 70px;
             border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: bold; font-size: 1.4rem;
-            color: #ffffff;
-            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #000000;
+            background-color: var(--accent-yellow);
+            user-select: none;
         }
+        /* Стили для плашек разных банков */
+        .bank-badge.alfa { background-color: #ef4444; color: #ffffff; }
+        .bank-badge.vtb { background-color: #00539f; color: #ffffff; }
+        .bank-badge.uralsib { background-color: #002855; color: #ffffff; }
+        .bank-badge.ozon { background-color: #005bff; color: #ffffff; }
+        .bank-badge.other { background-color: #10b981; color: #ffffff; }
 
         .offer-details h3 { margin: 0 0 10px 0; font-size: 1.3rem; color: #111827; }
         .offer-props {
@@ -113,6 +126,7 @@
             flex-wrap: wrap;
             margin-top: 10px;
         }
+        @media (max-width: 768px) { .offer-props { justify-content: center; } }
         .prop {
             background-color: #f9fafb;
             padding: 6px 12px;
@@ -121,10 +135,9 @@
             border: 1px solid #f3f4f6;
         }
         .prop span { display: block; font-weight: bold; color: #111827; }
-        
         .offer-action { text-align: right; }
         
-        /* Стили кнопки */
+        /* Исправленная кнопка для прямой работы ссылок на GitHub */
         .btn {
             display: inline-block;
             background-color: #10b981;
@@ -133,30 +146,46 @@
             font-weight: bold;
             text-decoration: none !important;
             border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+            font-size: 1rem;
             position: relative;
             z-index: 10;
             pointer-events: auto !important;
-            transition: background 0.2s;
         }
         .btn:hover { background-color: #059669; }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-top: 50px;
+            border-top: 1px solid #e5e7eb;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Меню сайта -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">ФинансНавигатор</a>
             <nav class="nav-links">
                 <a href="index.html" class="active">Дебетовые карты</a>
-                <a href="vklady.html">Вклады и Займы</a>
+                <a href="vklady.html">Вклады</a>
+                <a href="mfi.html">Микрозаймы</a>
+                <a href="credits.html">Кредиты</a>
+                <a href="alfa-ipoteka.html">Ипотека Альфа-Банк</a>
+                <a href="rko.html">РКО</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
         <div class="seo-block">
-            <h1>Лучшие дебетовые карты</h1>
-            <p>Выберите карту с кэшбэком и бесплатным обслуживанием.</p>
+            <h1>Где выгодно оформить дебетовую карту с кэшбэком онлайн</h1>
+            <p>Мы собрали актуальный рейтинг дебетовых карт, которые можно заказать через интернет за 5 минут. Сравните условия, выберите подходящие параметры и отправьте заявку на официальный сайт банка.</p>
         </div>
 
         <div class="offers-list">
