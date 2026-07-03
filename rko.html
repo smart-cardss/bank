@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выгодное РКО для ИП и ООО 2026 — Сравнить тарифы банков онлайн</title>
+    <meta name="description" content="Актуальный рейтинг банков для открытия расчетного счета ИП и ООО. Сравните стоимость обслуживания, проценты на остаток и выберите лучшее РКО онлайн.">
+    
+    <!-- Встроенный CSS (Полностью повторяет стиль вашего сайта) -->
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --bg-color: #f3f4f6;
+            --card-bg: #ffffff;
+            --accent-yellow: #ffdd2d;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 15px;
+        }
+        .seo-block {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        h1 { font-size: 2rem; margin-top: 0; color: #111827; }
+        p { color: #4b5563; font-size: 1.05rem; }
+        
+        /* Список офферов */
+        .offers-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .offer-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            border: 1px solid #e5e7eb;
+        }
+        @media (max-width: 768px) {
+            .offer-card { grid-template-columns: 1fr; text-align: center; }
+            .bank-badge { margin: 0 auto; }
+            .offer-action { text-align: center; }
+        }
+        
+        /* Текстовая плашка банка */
+        .bank-badge {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #000000;
+            background-color: var(--accent-yellow);
+            user-select: none;
+        }
+
+        .offer-details h3 { margin: 0 0 10px 0; font-size: 1.3rem; color: #111827; }
+        .offer-props {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        @media (max-width: 768px) { .offer-props { justify-content: center; } }
+        .prop {
+            background-color: #f9fafb;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            border: 1px solid #f3f4f6;
+        }
+        .prop span { display: block; font-weight: bold; color: #111827; }
+        .offer-action { text-align: right; }
+        .btn {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            padding: 12px 24px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s, transform 0.1s;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .btn:hover { background-color: #059669; }
+        .btn:active { transform: scale(0.98); }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #9ca3af;
+            font-size: 0.85rem;
+            margin-top: 50px;
+            border-top: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта (Вкладка РКО активна) -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">ФинансНавигатор</a>
+            <nav class="nav-links">
+                <a href="index.html">Дебетовые карты</a>
+                <a href="vklady.html">Вклады</a>
+                <a href="mfi.html">Микрозаймы</a>
+                <a href="credits.html">Кредиты</a>
+                <a href="alfa-ipoteka.html">Ипотека Альфа-Банк</a>
+                <a href="rko.html" class="active">РКО</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Вводный SEO блок -->
+        <div class="seo-block">
+            <h1>Расчётно-кассовое обслуживание для бизнеса — Рейтинг 2026 года</h1>
+            <p>Сравните условия банков по открытию и обслуживанию расчетного счета для индивидуальных предпринимателей и юридических лиц. Найдите тарифы с бесплатным обслуживанием, дешевыми платежками, выгодным эквайрингом и бонусами для старта бизнеса. Подайте онлайн-заявку на открытие счета за 5 минут.</p>
+        </div>
+
+        <!-- Список офферов РКО -->
+        <div class="offers-list">
+
+            <!--             <!-- Альфа-Банк - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #ef4444; color: #ffffff;">А</div>
+                <div class="offer-details">
+                    <h3>Альфа-Банк — Расчетно-кассовое обслуживание</h3>
+                    <div class="offer-props">
+                        <div class="prop">Обслуживание <span>от 0 ₽/мес.</span></div>
+                        <div class="prop">Переводы ИП <span>Без комиссии на личную карту</span></div>
+                        <div class="prop">Бонус <span>До 300 000 ₽ на рекламу и сервисы</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/xQ7I47wf?erid=+2SDnjdnzxAE" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+
+            <!-- Альфа-Банк - Торговый эквайринг -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #ef4444; color: #ffffff;">А</div>
+                <div class="offer-details">
+                    <h3>Альфа-Банк — Торговый эквайринг</h3>
+                    <div class="offer-props">
+                        <div class="prop">Ставка <span>от 1% за платежи</span></div>
+                        <div class="prop">Терминалы <span>Предоставляются бесплатно</span></div>
+                        <div class="prop">Зачисление <span>На следующий день</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/tDvKPui5?erid=2SDnjcA5Pke" class="btn" target="_blank" rel="noopener nofollow">Подключить</a>
+                </div>
+            </div>
+
+            <!-- Альфа Банк - Регистрация бизнеса + РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #ef4444; color: #ffffff;">А</div>
+                <div class="offer-details">
+                    <h3>Альфа-Банк — Регистрация бизнеса и РКО</h3>
+                    <div class="offer-props">
+                        <div class="prop">Госпошлина <span>0 ₽ (Бесплатно)</span></div>
+                        <div class="prop">Формат <span>Онлайн без визита в налоговую</span></div>
+                        <div class="prop">Результат <span>Документы и счет за 3 дня</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/UHt9H59N?erid=2SDnjeEA46e" class="btn" target="_blank" rel="noopener nofollow">Зарегистрировать</a>
+                </div>
+            </div>
+
+            <!-- Уралсиб - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #002855; color: #ffffff;">У</div>
+                <div class="offer-details">
+                    <h3>Банк Уралсиб — РКО для ИП и ООО</h3>
+                    <div class="offer-props">
+                        <div class="prop">Открытие счета <span>Онлайн за 1 день</span></div>
+                        <div class="prop">Платежи <span>Бесплатные внутри банка</span></div>
+                        <div class="prop">Удобство <span>Бизнес-карта с кэшбэком</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/jGOSp1d9?erid=2SDnjeEL8mp" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+
+            <!-- БСПБ - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #0a2540; color: #ffffff;">БСПБ</div>
+                <div class="offer-details">
+                    <h3>Банк «Санкт-Петербург» — РКО</h3>
+                    <div class="offer-props">
+                        <div class="prop">Тарифы <span>Под любой масштаб бизнеса</span></div>
+                        <div class="prop">Интернет-банк <span>Современный и быстрый</span></div>
+                        <div class="prop">Поддержка <span>Персональный менеджер</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/DsKOj9WX?erid=2SDnjeLA2cx" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+            <!-- Точка Банк - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #7b2cbf; color: #ffffff;">Т.</div>
+                <div class="offer-details">
+                    <h3>Точка Банк — РКО для предпринимателей</h3>
+                    <div class="offer-props">
+                        <div class="prop">Обслуживание <span>от 0 ₽/мес.</span></div>
+                        <div class="prop">Переводы ИП <span>До 1 млн ₽ без комиссии</span></div>
+                        <div class="prop">Особенность <span>Круглосуточный чат-поддержка</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://ppdu.ru" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+
+            <!-- ВТБ - Регистрация бизнеса + РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #00539f; color: #ffffff;">ВТБ</div>
+                <div class="offer-details">
+                    <h3>ВТБ — Регистрация бизнеса + РКО</h3>
+                    <div class="offer-props">
+                        <div class="prop">Регистрация <span>0 ₽ онлайн за 3 дня</span></div>
+                        <div class="prop">Обслуживание <span>Бесплатно на старте</span></div>
+                        <div class="prop">Налоги <span>Без визита в ФНС</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://ppdu.ru" class="btn" target="_blank" rel="noopener nofollow">Зарегистрировать</a>
+                </div>
+            </div>
+
+            <!-- ВТБ - Торговый эквайринг для бизнеса -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #00539f; color: #ffffff;">ВТБ</div>
+                <div class="offer-details">
+                    <h3>ВТБ — Торговый эквайринг для бизнеса</h3>
+                    <div class="offer-props">
+                        <div class="prop">Ставка <span>от 1.3% за операции</span></div>
+                        <div class="prop">Связь <span>Интеграция с любой онлайн-кассой</span></div>
+                        <div class="prop">Подключение <span>Терминал за 0 ₽</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://ppdu.ru" class="btn" target="_blank" rel="noopener nofollow">Подключить</a>
+                </div>
+            </div>
+
+            <!-- ВТБ - Бухгалтерия для бизнеса -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #00539f; color: #ffffff;">ВТБ</div>
+                <div class="offer-details">
+                    <h3>ВТБ — Бухгалтерия для бизнеса</h3>
+                    <div class="offer-props">
+                        <div class="prop">Сервис <span>Онлайн-расчет налогов и взносов</span></div>
+                        <div class="prop">Формат <span>Автоотчетность в ФНС</span></div>
+                        <div class="prop">Для кого <span>Идеально для ИП на УСН</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://ppdu.ru" class="btn" target="_blank" rel="noopener nofollow">Попробовать</a>
+                </div>
+            </div>
+
+            <!-- Ozon Банк - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #005bff; color: #ffffff;">O3</div>
+                <div class="offer-details">
+                    <h3>Ozon Банк — РКО для продавцов маркетплейсов</h3>
+                    <div class="offer-props">
+                        <div class="prop">Открытие счета <span>Бесплатно онлайн</span></div>
+                        <div class="prop">Для селлеров <span>Выплаты с Ozon без комиссий</span></div>
+                        <div class="prop">Бонус <span>Удобный личный кабинет</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://ppdu.ru" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+            <!-- Локо Банк - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #ff6b00; color: #ffffff;">ЛБ</div>
+                <div class="offer-details">
+                    <h3>Локо-Банк — РКО для бизнеса</h3>
+                    <div class="offer-props">
+                        <div class="prop">Обслуживание <span>от 0 ₽/мес.</span></div>
+                        <div class="prop">Открытие счета <span>Онлайн за 1 минуту</span></div>
+                        <div class="prop">Бонус <span>До 500 000 ₽ на развитие</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/6Z9XCqxe?erid=Kra23ute7" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+
+            <!-- Кредит Европа Банк - Эквайринг -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #002d62; color: #ffffff;">КЕБ</div>
+                <div class="offer-details">
+                    <h3>Кредит Европа Банк — Торговый эквайринг</h3>
+                    <div class="offer-props">
+                        <div class="prop">Тарифы <span>Выгодный процент от оборота</span></div>
+                        <div class="prop">Оборудование <span>Современные POS-терминалы</span></div>
+                        <div class="prop">Стабильность <span>Надежный международный банк</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/BYdOkorC?erid=2SDnjd8L9Jh" class="btn" target="_blank" rel="noopener nofollow">Подключить</a>
+                </div>
+            </div>
+
+            <!-- БСПБ - Банковская гарантия -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #0a2540; color: #ffffff;">БСПБ</div>
+                <div class="offer-details">
+                    <h3>Банк «Санкт-Петербург» — Банковские гарантии</h3>
+                    <div class="offer-props">
+                        <div class="prop">Формат <span>Для госзакупок и тендеров</span></div>
+                        <div class="prop">Выдача <span>Онлайн без визита в офис</span></div>
+                        <div class="prop">Сроки <span>Рассмотрение в день обращения</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/VW505YZI?erid=2SDnjdPK8LJ" class="btn" target="_blank" rel="noopener nofollow">Получить гарантию</a>
+                </div>
+            </div>
+
+            <!-- Норвик Банк - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #003a70; color: #ffffff;">НБ</div>
+                <div class="offer-details">
+                    <h3>Норвик Банк — РКО для ИП и компаний</h3>
+                    <div class="offer-props">
+                        <div class="prop">Условия <span>Простые и понятные тарифы</span></div>
+                        <div class="prop">Платежи <span>Высокая скорость проведения</span></div>
+                        <div class="prop">Поддержка <span>Индивидуальный подход к бизнесу</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/HEROq2Eg?erid=2SDnjc1SD3P" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+
+            <!-- Юкасса // интернет-эквайринг -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #00b050; color: #ffffff;">ЮK</div>
+                <div class="offer-details">
+                    <h3>ЮKassa — Интернет-эквайринг</h3>
+                    <div class="offer-props">
+                        <div class="prop">Оплата <span>СБП, карты, кошельки, частями</span></div>
+                        <div class="prop">Интеграция <span>Готовые модули для всех CMS</span></div>
+                        <div class="prop">Для кого <span>Для сайтов, соцсетей и маркетплейсов</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/w1b6G6L6?erid=2SDnjeo3nno" class="btn" target="_blank" rel="noopener nofollow">Подключить</a>
+                </div>
+            </div>
+            <!-- Банк ПСБ - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #ff5a00; color: #ffffff;">ПСБ</div>
+                <div class="offer-details">
+                    <h3>Банк ПСБ — Расчетно-кассовое обслуживание</h3>
+                    <div class="offer-props">
+                        <div class="prop">Обслуживание <span>от 0 ₽/мес.</span></div>
+                        <div class="prop">Бизнес-карты <span>Круглосуточный доступ к деньгам</span></div>
+                        <div class="prop">Лимиты <span>Выгодные переводы физлицам</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/jFatk5Vi?erid=Kra23mn2h" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+
+            <!-- ОТП Банк - РКО -->
+            <div class="offer-card">
+                <div class="bank-badge" style="background-color: #005a36; color: #ffffff;">ОТП</div>
+                <div class="offer-details">
+                    <h3>ОТП Банк — РКО для малого бизнеса</h3>
+                    <div class="offer-props">
+                        <div class="prop">Открытие счета <span>Онлайн без визита в банк</span></div>
+                        <div class="prop">Платежи <span>Быстрое проведение расчетов</span></div>
+                        <div class="prop">Сервис <span>Удобное мобильное приложение</span></div>
+                    </div>
+                </div>
+                <div class="offer-action">
+                    <a href="https://trk.ppdu.ru/click/nZzVKKe4?erid=2SDnje3xT3P" class="btn" target="_blank" rel="noopener nofollow">Открыть счет</a>
+                </div>
+            </div>
+ -->
+
+        </div> <!-- Конец .offers-list -->
+    </div> <!-- Конец .container -->
+
+    <footer>
+        <p>&copy; 2026 ФинансНавигатор. Информация о тарифах носит справочный характер. Сайт не является финансовой организацией и не открывает счета самостоятельно.</p>
+    </footer>
+
+</body>
+</html>
