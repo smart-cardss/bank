@@ -230,15 +230,19 @@
         <footer style="text-align: center; padding: 20px; font-size: 13px; color: #777; background: #eaeff2;">
     <p>© 2026 ФинансНавигатор. Сайт — агрегатор, не является юридической компанией.</p>
     
-    <!-- Скрытый счетчик LiveInternet -->
-    <div style="display: none !important; visibility: hidden !important;">
-        <!-- Вставьте сюда код счетчика LiveInternet -->
-        <script>
-            document.write("<a href='//www.liveinternet.ru/click' "+
-            "target=_blank><img src='//counter.yadro.ru/hit?t26.6;r"+
-            escape(document.referrer)+";u"+escape(document.URL)+
-            "' alt='' title='LiveInternet' border='0' width='88' height='15'><\/a>")
-        </script>
+    <!-- ВНИМАНИЕ: Вставьте ваш оригинальный код счетчика LiveInternet прямо под этой строчкой -->
+<div style="position: absolute; left: -9999px; top: -9999px; visibility: hidden; width: 1px; height: 1px; overflow: hidden;">
+    <script>
+        document.write("<a href='//www.liveinternet.ru/click' "+
+        "target='_blank' rel='noopener nofollow'><img src='//counter.yadro.ru/hit?t26.6;r"+
+        escape(document.referrer)+((typeof(screen)=="undefined")?"":
+        ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+        screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+        ";h"+escape(document.title.substring(0,150))+";"+Math.random()+
+        "' alt='' title='LiveInternet' "+
+        "border='0' width='88' height='15'><\/a>")
+    </script>
+</div>
     </div>
 </footer>
     </footer>
