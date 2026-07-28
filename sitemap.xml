@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+  <!-- Главная страница -->
+  <url>
+    <loc>https://fin-navigator24.ru/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Вклады -->
+  <url>
+    <loc>https://fin-navigator24.ru/vklady.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- МФО (Займы) -->
+  <url>
+    <loc>https://fin-navigator24.ru/mfi.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Кредиты -->
+  <url>
+    <loc>https://fin-navigator24.ru/credits.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Альфа Ипотека -->
+  <url>
+    <loc>https://fin-navigator24.ru/alfa-ipoteka.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- РКО -->
+  <url>
+    <loc>https://fin-navigator24.ru/rko.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Банкротство -->
+  <url>
+    <loc>https://fin-navigator24.ru/bankrotstvo.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
