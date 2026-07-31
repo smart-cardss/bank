@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /*?
+Disallow: /*utm_
 
-Sitemap: https://fin-navigator24.ru
+Sitemap: https://fin-navigator24.ru/sitemap.xml
